@@ -1,0 +1,11 @@
+#mid-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #0021A5 ;
+    height: 100vh;
+}
+#tagline{
+    margin-top: 20%;
+    margin-left: 10%;
+}

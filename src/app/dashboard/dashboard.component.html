@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div ngbDropdown class="d-inline-block">
+    <button type="button" class="btn btn-outline-primary" id="dropdownQuery" ngbDropdownToggle>
+      {{selectedQuery}}
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownQuery">
+      <li *ngFor="let query of queries; let i = index" [attr.data-index]="i" value="{{queries}}"
+          (click)="onSelectQuery(query, i)"
+          class="dropdown-item">{{query}}
+      </li>
+    </div>
+  </div>
+</div>
+
+<app-line-chart
+  [xLabels]="xLabels"
+  [yName]="yName"
+  [xName]="xName"
+  [series]="series"
+  [title]="title">
+</app-line-chart>
+
+<div class="row">
+  <!--CITY-->
+  <label *ngIf="isCityVisible" for="typeahead-basic">Search for a city:</label>
+  <div *ngIf="isCityVisible" class="col">
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="selectedCity" [ngbTypeahead]="search"/>
+  </div>
+  <!--YEAR-->
+  <div class="col" *ngIf="isYearVisible">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownYear" ngbDropdownToggle>
+        {{selectedYear}}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownYear">
+        <li *ngFor="let year of years" value="{{years}}" (click)="onSelectYear(year)"
+            class="dropdown-item">{{year}}
+        </li>
+      </div>
+    </div>
+  </div>
+  <!--YEAR2-->
+  <div class="col" *ngIf="isYear2Visible">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownYear2" ngbDropdownToggle>
+        {{selectedYear2}}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownYear">
+        <li *ngFor="let year of years" value="{{years}}" (click)="onSelectYear2(year)"
+            class="dropdown-item">{{year}}
+        </li>
+      </div>
+    </div>
+  </div>
+  <!--MONTH-->
+  <div class="col" *ngIf="isMonthVisible">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownMonth" ngbDropdownToggle>
+        {{selectedMonth}}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownYear">
+        <li *ngFor="let month of months; let i = index" [attr.data-index]="i" value="{{months}}"
+            (click)="onSelectMonth(month, i)"
+            class="dropdown-item">{{month}}
+        </li>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+  </div>
+</div>

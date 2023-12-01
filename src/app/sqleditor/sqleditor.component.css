@@ -1,0 +1,15 @@
+.background{
+    background-color: #0021A5 ;
+}
+#form-container{
+    margin-left: 5%;
+    margin-right: 10%;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+}
+#accordian{
+    background-color:#0021A5;
+    padding-top: 2%;
+}

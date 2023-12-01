@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="background">
+<div class="row">
+  <div style="padding-top: 2%; padding-left: 2%;" ngbDropdown class="d-inline-block">
+    <button type="button" class="btn btn-light" id="dropdownQuery" ngbDropdownToggle>
+      {{selectedQuery}}
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownQuery">
+      <li *ngFor="let query of queries; let i = index" [attr.data-index]="i" value="{{queries}}"
+          (click)="onSelectQuery(query, i)"
+          class="dropdown-item">{{query}}
+      </li>
+    </div>
+  </div>
+</div>
+  <div id="form-container">
+    <h2 style="color: white;">Table Results</h2>
+    <div class="table-responsive card">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th style="background-color: white;"*ngFor = 'let col of resultsHeader'>{{col}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of rows">
+          <td  style="background-color: white;" *ngFor = 'let col of resultsHeader'>{{row[col]}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="form-container">
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [maxSize]="15"
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="refreshRows()"
+    >
+    </ngb-pagination>
+  
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshRows()">
+      <option [ngValue]="15">15 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+      <option [ngValue]="45">45 items per page</option>
+      <option [ngValue]="100">100 items per page</option>
+    </select>
+  </div>
+</div>
+</div>
+
+

@@ -1,0 +1,188 @@
+<app-navbar></app-navbar>
+<div class="background">
+    <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+    <div id="form-container">
+        <div id="accordian">
+            <ngb-accordion #acc="ngbAccordion" activeIds="">
+                <ngb-panel title="Airline Change">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.airline_change</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>AIRLINE_YEAR</li>
+                                <li>AIRLINE_MONTH</li>
+                                <li>CARRIER</li>
+                                <li>AIRPORT</li>
+                                <li>ARR_FLIGHTS</li>
+                                <li>ARR_CANCELLED</li>
+                                <li>ARR_DIVERTED</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Airline Passenger Satisfation">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.airport_passenger_satisfaction</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>CUSTOMER_ID</li>
+                                <li>GENDER</li>
+                                <li>AGE</li>
+                                <li>CUSTOMER_TYPE</li>
+                                <li>TYPE_OF_TRAVEL</li>
+                                <li>TRAVEL_CLASS</li>
+                                <li>FLIGHT_DISTANCE</li>
+                                <li>DEPARTURE_DELAY</li>
+                                <li>ARRIVAL_DELAY</li>
+                                <li>DEPARTURE_ARRIVAL_CONVENIENCE</li>
+                                <li>SATISFACTION</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Airport Project">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.airport_project</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>AIRPORT_CODE</li>
+                                <li>CITY</li>
+                                <li>STATE_NAME</li>
+                                <li>AIRPORT_NAME</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Carrier">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.carrier</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>CARRIER</li>
+                                <li>CARRIER_NAME</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Delay Less 15">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.delay_less_15</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>DELAY_YEAR</li>
+                                <li>DELAY_MONTH</li>
+                                <li>CARRIER</li>
+                                <li>AIRPORT</li>
+                                <li>ARR_DEL15</li>
+                                <li>CARRIER_CT</li>
+                                <li>WEATHER_CT</li>
+                                <li>NAS_CT</li>
+                                <li>SECURITY_CT</li>
+                                <li>LATE_AIRCRAFT_CT</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Delay More 15">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.delay_more_15</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>DELAY_YEAR</li>
+                                <li>DELAY_MONTH</li>
+                                <li>CARRIER</li>
+                                <li>AIRPORT</li>
+                                <li>ARR_DEL15</li>
+                                <li>CARRIER_CT</li>
+                                <li>WEATHER_CT</li>
+                                <li>NAS_CT</li>
+                                <li>SECURITY_CT</li>
+                                <li>LATE_AIRCRAFT_CT</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Flight Weather">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.flight_weather</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>FLIGHT_YEAR</li>
+                                <li>FLIGHT_MONTH</li>
+                                <li>DAY_OF_THE_MONTH</li>
+                                <li>FL_DATE</li>
+                                <li>ORIGIN_AIRPORT</li>
+                                <li>VISIBILITYORIGIN</li>
+                                <li>DRYBULBCELSIUSORIGIN</li>
+                                <li>DEWPOINTCELSIUSORIGIN</li>
+                                <li>RELATIVEHUMIDITYORIGIN</li>
+                                <li>WINDSPEEDORIGIN</li>
+                                <li>ALTIMETERORIGIN</li>
+                                <li>VISIBILITYDEST</li>
+                                <li>DRYBULBCELSIUSDEST</li>
+                                <li>DEWPOINTCELSIUSDEST</li>
+                                <li>RELATIVEHUMIDITYDEST</li>
+                                <li>WINDSPEEDDEST</li>
+                                <li>ALTIMETERDEST</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Weather Event">
+                    <ng-template ngbPanelContent>
+                        <h4>Columns</h4>
+                        <p>Table Name: <code>daiyilong.weatherevent</code></p>
+                        <div id="form-container">
+                            <ul >
+                                <li>EVENT_YEAR</li>
+                                <li>EVENT_MONTH</li>
+                                <li>WEATHER_DURATION</li>
+                                <li>AIRPORT_CODE</li>
+                                <li>EVENT_TYPE</li>
+                                <li>EVENT_SEVERITY</li>
+                              </ul>
+                    </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+    <div id="form-container">
+        <h2 style="color: white;">Query Editor</h2>
+        <form id="form" [formGroup] = "textAreaForm" (ngSubmit)="onClickSubmit()">
+            <textarea cols="40" rows = "5" class ="tesxt-area" formControlName="textArea"></textarea>
+            <input type="submit" value="Execute">
+            <p *ngFor="let alert of alerts">
+                <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+            </p>
+        </form>
+    </div>
+    <div id="form-container">
+        <h2 style="color: white;">Query Results</h2>
+        <div class="table-responsive card">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="background-color: white;"*ngFor = 'let col of resultsHeader'>{{col}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of rows">
+                        <td  style="background-color: white;" *ngFor = 'let col of resultsHeader'>{{row[col]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
